@@ -50,6 +50,17 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
+  assets:
+    - assets/image/qrcode.jpg
+    - assets/image/logo.png
+    - assets/image/back.png
+    - assets/image/home.png
+    - assets/data/acne_result_high.json
+    - assets/data/acne_result_low.json
+    - assets/data/acne_result_m_high.json
+    - assets/data/acne_result_middle.json
+    - assets/data/nail_result_high.json
+    - assets/data/nail_result_low.json
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
