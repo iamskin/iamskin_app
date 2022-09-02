@@ -1,4 +1,6 @@
 import 'dart:io';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
 import 'package:requests/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:iamskin_app_with_firebase/api/firebase_api.dart';
@@ -57,26 +59,26 @@ class _ImageUploadsState extends State<ImageUploads> {
     if (task == null) return;
     final snapshot = await task!.whenComplete(() {});
     final urlDownload = await snapshot.ref.getDownloadURL();
-    var r = await Requests.post(
-        'http://35.185.146.67:5000/acne-classifier',
-        body: {
-          'image': urlDownload,
-          'format': 'url',
-        },
-        bodyEncoding: RequestBodyEncoding.FormURLEncoded);
-    r.raiseForStatus();
-    dynamic json = r.json();
-    print(json!['prediction']);
-    print('Download-Link: $urlDownload');
-    /*try {
-    //  final ref = firebase_storage.FirebaseStorage.instance
-    //      .ref(destination)
-          .child('file/');
-      await ref.putFile(_photo!);
-    } catch (e) {
-      print('error occured');
-    }*/
+    print('start');
+    var url = Uri.parse(urlDownload);
+    Map<String,String> headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'};
+    final msg = jsonEncode({'image': 'https://i.imgur.com/IiUAtBZ.jpg', 'format': "url"});
+    var response = await http.post(url,
+        headers:headers,
+        body:msg
+    );
+    print("${response.statusCode}");
+    print("${response.body}");
+    Map<String, dynamic> outcome = jsonDecode(response.body);
+    print(outcome['prediction']);
+    List<String> strarray = response.body.split(":");
+    print(strarray[0]);
+    print('end');
+    return 'ok';
+
   }
+
+
 
   @override
   Widget build(BuildContext context) {
