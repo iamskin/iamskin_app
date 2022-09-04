@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:requests/requests.dart';
 import 'package:flutter/material.dart';
 import 'package:iamskin_app_with_firebase/api/firebase_api.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -60,9 +59,9 @@ class _ImageUploadsState extends State<ImageUploads> {
     final snapshot = await task!.whenComplete(() {});
     final urlDownload = await snapshot.ref.getDownloadURL();
     print('start');
-    var url = Uri.parse(urlDownload);
+    var url = Uri.parse('https://skin-test.herokuapp.com/skin-classifier/');
     Map<String,String> headers = {'Content-Type': 'application/json', 'Accept': 'text/plain'};
-    final msg = jsonEncode({'image': 'https://i.imgur.com/IiUAtBZ.jpg', 'format': "url"});
+    final msg = jsonEncode({'image': urlDownload, 'format': "url"});
     var response = await http.post(url,
         headers:headers,
         body:msg
