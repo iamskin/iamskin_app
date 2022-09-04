@@ -52,7 +52,7 @@ class _ImageUploadsState extends State<ImageUploads> {
   Future uploadFile() async {
     if (_photo == null) return;
     final fileName = basename(_photo!.path);
-    final destination = 'files/$fileName';
+    final destination = 'acne/$fileName';
     task = FirebaseApi.uploadFile(destination, _photo!);
     setState(() {});
     if (task == null) return;
