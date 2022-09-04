@@ -70,8 +70,12 @@ class _ImageUploadsState extends State<ImageUploads> {
     print("${response.body}");
     Map<String, dynamic> outcome = jsonDecode(response.body);
     print(outcome['prediction']);
-    List<String> strarray = response.body.split(":");
-    print(strarray[0]);
+    final data = outcome['prediction'] as Map;
+    for (final name in data.keys) {
+      final value = data[name];
+      print('$name,$value');
+      print('$name'.runtimeType);
+    }
     print('end');
     return 'ok';
 

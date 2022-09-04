@@ -70,8 +70,30 @@ class _ImageUploadsState extends State<ImageUploads> {
     print("${response.body}");
     Map<String, dynamic> outcome = jsonDecode(response.body);
     print(outcome['prediction']);
-    List<String> strarray = response.body.split(":");
-    print(strarray[0]);
+    final data = outcome['prediction'] as Map;
+    for (final name in data.keys) {
+      final value = data[name];
+      print('$name,$value');
+      print('$name'.runtimeType);
+      if ('$name' == 'melanonychia'){
+        print('melanonychia');
+      }
+      else if ('$name' == 'atypical'){
+        print('melanonychia');
+      }
+      else if ('$name' == 'etc'){
+        print('etc');
+      }
+      else if ('$name' == 'naildystrophy'){
+        print('naildystrophy');
+      }
+      else if ('$name' == 'nodule'){
+        print('nodule');
+      }
+      else if ('$name' == 'normalnail'){
+        print('normalnail');
+      }
+    }
     print('end');
     return 'ok';
 
