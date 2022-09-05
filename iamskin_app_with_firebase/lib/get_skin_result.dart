@@ -70,15 +70,22 @@ class _ImageUploadsState extends State<ImageUploads> {
     print("${response.body}");
     Map<String, dynamic> outcome = jsonDecode(response.body);
     print(outcome['prediction']);
-    final data = outcome['prediction'] as Map;
-    for (final name in data.keys) {
-      final value = data[name];
+    final Data = outcome['likelihood'] as Map;
+    for (final name in Data.keys){
+      final value = Data[name];
       print('$name,$value');
-      print('$name'.runtimeType);
+      if ('$name' == 'dry'){
+        print('dry:$value');
+      }
+      else if ('$name' == 'oily'){
+        print('oily:$value');
+      }
+      else if ('$name' == 'sensitive'){
+        print('sensitive:$value');
+      }
     }
     print('end');
     return 'ok';
-
   }
 
 
