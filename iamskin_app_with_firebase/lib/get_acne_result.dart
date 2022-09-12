@@ -70,8 +70,18 @@ class _ImageUploadsState extends State<ImageUploads> {
     print("${response.body}");
     Map<String, dynamic> outcome = jsonDecode(response.body);
     print(outcome['prediction']);
-    List<String> strarray = response.body.split(":");
-    print(strarray[0]);
+    if (outcome['prediction'] == 'Mild'){
+      print('Mild');
+    }
+    else if (outcome['prediction'] == 'Moderate'){
+      print('Moderate');
+    }
+    else if (outcome['prediction'] == 'Severe'){
+      print('Severe');
+    }
+    else if (outcome['prediction'] == 'Very-Severe'){
+      print('Very-Severe');
+    }
     print('end');
     return 'ok';
 
