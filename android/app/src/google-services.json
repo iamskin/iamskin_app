@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "462464071851",
+    "project_id": "iamskin",
+    "storage_bucket": "iamskin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:462464071851:android:6fe499900e330898bd5fee",
+        "android_client_info": {
+          "package_name": "com.example.test01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "462464071851-cv85ucpr4iggtjo6o5j5opm26gkkrh2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiVMZuWg69gyjPW-D7BvLu6c1dUbaTFDA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "462464071851-cv85ucpr4iggtjo6o5j5opm26gkkrh2v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
