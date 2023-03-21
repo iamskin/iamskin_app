@@ -51,10 +51,13 @@ class acneState extends State<acne> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
-
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: const EdgeInsets.all(20),
+                              primary: Colors.blueGrey,
                             ),
                             onPressed: () {
                               onImageButtonPressed(
@@ -67,11 +70,10 @@ class acneState extends State<acne> {
                                 },
                               );
                             },
-                            padding: const EdgeInsets.all(20),
-                            color: Colors.blueGrey,
                             child: const Text(
-                                '     上傳照片     ', style: TextStyle(color: Colors
-                                .white, fontSize: 20)),
+                              '     上傳照片     ',
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
                           ),
                         ),
                         const Text(
@@ -80,9 +82,13 @@ class acneState extends State<acne> {
                         ),
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 16.0),
-                          child: RaisedButton(
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30),
+                          child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: const EdgeInsets.all(20),
+                              primary: Colors.blueGrey,
                             ),
                             onPressed: () {
                               onImageButtonPressed(
@@ -95,11 +101,10 @@ class acneState extends State<acne> {
                                 },
                               );
                             },
-                            padding: const EdgeInsets.all(20),
-                            color: Colors.blueGrey,
-                            child: const Text('        拍  照        ',
-                                style: TextStyle(color: Colors.white,
-                                    fontSize: 20)),
+                            child: const Text(
+                              '        拍  照        ',
+                              style: TextStyle(color: Colors.white, fontSize: 20),
+                            ),
                           ),
                         ),
                       ],

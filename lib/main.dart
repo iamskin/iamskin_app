@@ -138,38 +138,59 @@ class _MyHomePageState extends State<MyHomePage> {
                 const Text('\n\n\n'),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                  shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(30),
-                  ),
-                    onPressed: () {Navigator.of(context).pushNamed(skinPage);},
-                    padding: const EdgeInsets.all(20),
-                    color: Colors.blueGrey,
-                    child: const Text('        膚質檢測        ', style: TextStyle(color: Colors.white, fontSize: 20)),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      primary: Colors.blueGrey,
+                    ),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(skinPage);
+                    },
+                    child: const Text(
+                      '        膚質檢測        ',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      primary: Colors.blueGrey,
                     ),
-                    onPressed: () {Navigator.of(context).pushNamed(nailPage);},
-                    padding: const EdgeInsets.all(20),
-                    color: Colors.blueGrey,
-                    child: const Text('        指甲檢測        ', style: TextStyle(color: Colors.white, fontSize: 20)),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(nailPage);
+                    },
+                    child: const Text(
+                      '        指甲檢測        ',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(vertical: 16.0),
-                  child: RaisedButton(
-                    shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      padding: const EdgeInsets.all(20),
+                      primary: Colors.blueGrey,
                     ),
-                    onPressed: () {Navigator.of(context).pushNamed(acnePage);},
-                    padding: const EdgeInsets.all(20),
-                    color: Colors.blueGrey,
-                    child: const Text('        痘痘檢測        ', style: TextStyle(color: Colors.white, fontSize: 20)),
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(acnePage);
+                    },
+                    child: const Text(
+                      '        痘痘檢測        ',
+                      style: TextStyle(color: Colors.white, fontSize: 20),
+                    ),
                   ),
                 ),
               ]

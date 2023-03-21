@@ -51,66 +51,64 @@ class nailState extends State<nail> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-            Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              onPressed: () {
-                onImageButtonPressed(
-                  ImageSource.gallery, context: context,
-                  capturedImageFile: (s) {
-                    print("file path  ${s}");
-                    setState(() {
-                      _imageFile = s;
-                    });
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    padding: const EdgeInsets.all(20),
+                    primary: Colors.blueGrey,
+                  ),
+                  onPressed: () {
+                    onImageButtonPressed(
+                      ImageSource.gallery,
+                      context: context,
+                      capturedImageFile: (s) {
+                        print("file path  ${s}");
+                        setState(() {
+                          _imageFile = s;
+                        });
+                      },
+                    );
                   },
-                );
-              },
-              padding: const EdgeInsets.all(20),
-              color: Colors.blueGrey,
-              child: const Text(
-                  '     上傳照片     ', style: TextStyle(color: Colors
-                  .white, fontSize: 20)),
-            ),
-          ),
-          const Text(
+                  child: const Text(
+                    '     上傳照片     ',
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ),
+              ),
+              const Text(
             '   ',
             style: TextStyle(fontSize: 25.0, color: Colors.black),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16.0),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(30),
-              ),
-              onPressed: () {
-
-                onImageButtonPressed(
-                  ImageSource.camera,
-                  context: context,
-                  capturedImageFile: (s) {
-                    setState(() {
-                      _imageFile = s;
-                    });
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 16.0),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    padding: const EdgeInsets.all(20),
+                    primary: Colors.blueGrey,
+                  ),
+                  onPressed: () {
+                    onImageButtonPressed(
+                      ImageSource.camera,
+                      context: context,
+                      capturedImageFile: (s) {
+                        setState(() {
+                          _imageFile = s;
+                        });
+                      },
+                    );
                   },
-                );
-              ///////////////////////////////////////////////
-/*
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const ImageUploads()),
-                );*/},
-              padding: const EdgeInsets.all(20),
-              color: Colors.blueGrey,
-              child: const Text('        拍  照        ',
-                  style: TextStyle(color: Colors.white,
-                      fontSize: 20)),
-            ),
-          ),
-        ],
+                  child: const Text('        拍  照        ',
+                      style: TextStyle(color: Colors.white, fontSize: 20)),
+                ),
+              ),
+            ],
       ),
       ]
     )

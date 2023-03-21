@@ -29,7 +29,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: 0.10.0+1
+  camera: ^0.10.3+2
   path_provider: ^2.0.11
   path: ^1.8.1
   image_cropper: ^3.0.0
@@ -38,11 +38,11 @@ dependencies:
   fluttertoast: ^8.0.9
   wechat_assets_picker: ^8.0.0
   font_awesome_flutter: any
-  cloud_firestore: ^2.4.0
-  firebase_auth: ^3.0.1
+  cloud_firestore: ^4.4.5
+  firebase_auth: ^4.3.0
   permission_handler: ^10.0.0
-  firebase_core: ^1.5.0
-  firebase_storage: ^10.0.1
+  firebase_core: ^2.8.0
+  firebase_storage: ^11.0.16
   requests: ^4.4.1
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
